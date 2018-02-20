@@ -1,0 +1,18 @@
+{
+  "name": "jest-allure-reporter",
+  "version": "1.0.0",
+  "description": "Jest Allure Reoprter",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest-allure-reporter"
+  },
+  "author": "Pascal Esemann",
+  "dependencies": {
+    "@types/jest": "^22.1.2",
+    "@types/node": "^4.0.36",
+    "allure-commandline": "^2.5.0",
+    "hjson": "^3.1.1",
+    "save-file": "^1.2.0",
+    "jest": "^22.2.2"
+  }
+}
