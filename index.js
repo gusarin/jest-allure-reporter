@@ -75,7 +75,7 @@ class JestAllureReporter {
     var allure = require('allure-commandline');
  
     // returns ChildProcess instance
-    var generation = allure(['generate', 'allure-results', '--clean']);
+    var generation = allure(['generate', 'node_modules/jest-allure-reporter/allure-results', '--clean']);
   
     generation.on('exit', function(exitCode) {
       console.log('Generation is finished with code:', exitCode);
