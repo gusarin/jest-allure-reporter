@@ -1,6 +1,6 @@
 {
   "name": "jest-allure-reporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jest Allure Reoprter",
   "main": "index.js",
   "scripts": {
