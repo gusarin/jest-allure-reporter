@@ -6,8 +6,8 @@ class Testsuite {
 
 
       this.testSuiteResults = testSuiteResults;
-      this.startTime = jsonResults.startTime;
-      this.stopTime = jsonResults.startTime;
+      this.startTime = testSuiteResults.perfStats.start;
+      this.stopTime = testSuiteResults.perfStats.end;
       this.name = testSuiteResults.testFilePath.replace(/\//g, '');
       this.testcases = [];
       this.testSuiteResults.testResults.forEach( testcase => {

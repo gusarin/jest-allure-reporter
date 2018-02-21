@@ -17,8 +17,8 @@ class Allure {
             allureXMLString += "<name>" + testcase.fullName + "</name>\n";
             allureXMLString += "<title>" + testcase.title + "</title>\n";
             allureXMLString += "<failure>\n";    
-            allureXMLString += "<message>" + testcase.failureMessages +"</message>";
-            allureXMLString += "<stack-trace>" + testcase.failureMessages +"</stack-trace>";
+            allureXMLString += "<message>" + testcase.failureMessages +"</message>\n";
+            allureXMLString += "<stack-trace>" + testcase.failureMessages +"</stack-trace>\n";
             allureXMLString += "</failure>\n";
             allureXMLString += "</test-case>\n";
         });
