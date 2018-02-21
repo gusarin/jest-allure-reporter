@@ -1,36 +1,16 @@
-/**
- * jest-allure-reporter
- * @author: Pascal Esemann
- * @file: index.js
- * @description: Entrypoint for the reporter.
- */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jest_results_1 = require("./jest_results");
+const allure_1 = require("./allure");
+const testsuite_1 = require("./testsuite");
 class JestAllureReporter {
-  constructor(globalConfig, options) {
-
-    //Jest Results Data
-    this._globalConfig = globalConfig;
-    this._options = options;
-  }
-  
-  //Method is getting called after the tests ran.
-  onRunComplete(contexts, results) {
-    //required Classes
-    const jestResults = new require('./jest-results.js');
-    const testSuite = require('./testsuite.js');
-    const allure = new require('./allure.js');
-    
-    var testResultsAsJson = jestResults.onRunComplete(contexts, results);
-    results.testResults.forEach(suite => {
-      var testsuite = new testSuite(suite, testResultsAsJson);
-      testsuite.writeToFileAsAllureInput();
-    });
-    allure.generateReport();
-  }
+    onRunComplete(contexts, results) {
+        const testResultsAsJson = jest_results_1.JestResults.onRunComplete(contexts, results);
+        results.testResults.forEach((suite) => {
+            const testsuite = new testsuite_1.TestSuite(suite, testResultsAsJson);
+            testsuite.writeToFileAsAllureInput();
+        });
+        allure_1.Allure.generateReport();
+    }
 }
-
-module.exports = (results) => {
-    reporter = new JestAllureReporter(null, results);
-    reporter.onRunComplete(null, results);
-
-    return results;
-}
+//# sourceMappingURL=index.js.map

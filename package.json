@@ -17,7 +17,9 @@
   "bugs": "https://github.com/gusarin/jest-allure-reporter",
   "main": "index.js",
   "scripts": {
-    "test": "jest-allure-reporter"
+    "test": "jest-allure-reporter",
+    "tsc:compile": "tsc",
+    "prepublish": "npm run tsc:compile"
   },
   "author": {
     "name": "Pascal Esemann <pascal.esemann@gusarin.de> (https://github.com/gusarin)"
