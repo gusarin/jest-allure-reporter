@@ -61,3 +61,5 @@ typings/
 allure-results/
 allure-report/
 
+#old
+index.1.js
