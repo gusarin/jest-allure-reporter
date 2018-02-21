@@ -19,12 +19,12 @@ In your jest-project add the following to the dependencies section of the packag
 "dependencies": {
     "jest-allure-reporter": "^1.1.0"
 }
-´´´\\
+```
 Additionally configure the jest-allure-reporter as the test-reporter used by jest by adding the following to your jest.config.ts:\\
 ```typescript
 testResultsProcessor: "jest-allure-reporter"
-´´´\\
+```
 After editing of the two files install by running ``` npm update ``` on the commandline:\\
 ```
 npm update
-´´´\\
+```
