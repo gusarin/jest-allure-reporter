@@ -1,7 +1,7 @@
 {
   "name": "jest-allure-reporter",
   "version": "1.1.0",
-  "description": "A Jest Allure Reoprter, which takes the test-results from jest and creates an allure-report from it.",
+  "description": "A Jest Allure Reporter, which takes the test-results from jest and creates an allure-report from it.",
   "keywords":["test", "testautomation", "testreport", "unittest", "UI-test", "uitest", "reporting", "jest", "allure"],
   "homepage": "https://github.com/gusarin/jest-allure-reporter",
   "bugs": "https://github.com/gusarin/jest-allure-reporter",
