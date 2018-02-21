@@ -1,4 +1,12 @@
-// jest-allure-reporter - testsuite.js
+/**
+ * jest-allure-reporter
+ * @author: Pascal Esemann
+ * @file: testsuite.js
+ * @description: Class for representing a testcase.
+ */
+
+
+ //Getting testsuite-related data from the json-results of the testsuite.
 class Testsuite {
     constructor(testSuiteResults, jsonResults) {
       //required Classes
@@ -15,7 +23,8 @@ class Testsuite {
       });
 
     }
-
+    
+    //Triggering creation of an XML-resultfile from the testsuites data.
     writeToFileAsAllureInput(){
         const allure = require('./allure.js');
         allure.generateAllureXMLOutput(this);

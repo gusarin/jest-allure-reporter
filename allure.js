@@ -1,3 +1,10 @@
+/**
+ * jest-allure-reporter
+ * @author: Pascal Esemann
+ * @file: allure.js
+ * @description: Functionality for generating an Allure-Report from given Testsuites and Testcases.
+ */
+
 class Allure {
     constructor() {
         //required Classes
@@ -5,6 +12,7 @@ class Allure {
 
     }
 
+    //Generating an String containing the test-results in an XML-Format which is readable for Allure, and calling a method writing the string to a file. 
     static generateAllureXMLOutput(testsuite){
         var allureXMLString = "";
         allureXMLString += "<?xml version='1.0'?>\n";
@@ -29,12 +37,14 @@ class Allure {
         }
     }
 
+    //Write the given String to file, as an input for the report generation
     static writeXMLToFile(xmlString, name) {
 
         const save = require('save-file');
         save(xmlString, 'allure-results/' + name + '-testsuite.xml');
     }
 
+    //Generate the Allure-report.
     static generateReport(){
         var allure = require('allure-commandline');
      

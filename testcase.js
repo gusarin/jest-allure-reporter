@@ -1,3 +1,11 @@
+/**
+ * jest-allure-reporter
+ * @author: Pascal Esemann
+ * @file: testcase.js
+ * @description: Class for representing a testcase.
+ */
+
+ //Getting testcase-related data from the json-results of the testcase.
 class Testcase {
     constructor(testcase, jsonResults) {
         this.startTime = jsonResults.startTime;

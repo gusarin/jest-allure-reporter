@@ -1,12 +1,30 @@
 {
   "name": "jest-allure-reporter",
-  "version": "1.0.3",
-  "description": "Jest Allure Reoprter",
+  "version": "1.1.0",
+  "description": "A Jest Allure Reoprter, which takes the test-results from jest and creates an allure-report from it.",
+  "keywords":["test", "testautomation", "testreport", "unittest", "UI-test", "uitest", "reporting", "jest", "allure"],
+  "homepage": "https://github.com/gusarin/jest-allure-reporter",
+  "bugs": "https://github.com/gusarin/jest-allure-reporter",
+
   "main": "index.js",
   "scripts": {
     "test": "jest-allure-reporter"
   },
-  "author": "Pascal Esemann",
+  "author": {
+    "name": "Pascal Esemann <pascal.esemann@gusarin.de> (https://github.com/gusarin)"
+  },
+  "man": 
+  { 
+    "name" : "jest-allure-reporter"
+   ,"version" : "1.1.0"
+   ,"description" : "A Jest Allure Reoprter, which takes the test-results from jest and creates an allure-report from it."
+   ,"main" : "index.js"
+   ,"man" : "./README.md"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/gusarin/jest-allure-reporter"
+  },
   "dependencies": {
     "@types/jest": "^22.1.2",
     "@types/node": "^4.0.36",
