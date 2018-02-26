@@ -1,6 +1,6 @@
-import {JestResults} from "./jest_results";
-import {Allure} from "./allure";
-import {TestSuite} from "./testsuite";
+import { JestResults } from "./jest_results";
+import { Allure } from "./allure";
+import { TestSuite } from "./testsuite";
 
 /**
  * jest-allure-reporter
@@ -24,9 +24,9 @@ class JestAllureReporter {
     }
 }
 
-// module.exports = (results) => {
-//     reporter = new JestAllureReporter(null, results);
-//     reporter.onRunComplete(null, results);
-//
-//     return results;
-// };
+module.exports = (results: any) => {
+    const reporter = new JestAllureReporter();
+    reporter.onRunComplete(null, results);
+
+    return results;
+};
