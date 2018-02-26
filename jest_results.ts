@@ -4,6 +4,8 @@
  * @file: jest_results.js
  * @description: Getting the jest test-results and converting them to normal json.
  */
+import * as hjson from "hjson";
+
 export class JestResults {
     //Entrypoint for getting the json-test-results
     static onRunComplete(contexts: any, results: any) {
@@ -13,7 +15,7 @@ export class JestResults {
 
     //Convert original jest-rest-result-format to JSON-Format.
     static getTestResults(results: any) {
-        var Hjson = require('hjson');
-        return Hjson.parse(Hjson.stringify(results));
+        //var Hjson = require('hjson');
+        return hjson.parse(hjson.stringify(results));
     }
 }

@@ -5,11 +5,14 @@
  * @description: Functionality for generating an Allure-Report from given Testsuites and Testcases.
  */
 
-import { TestSuite } from "./testsuite";
+import { Testsuite } from "./testsuite";
+import save = require("save-file");
+import allure = require("allure-commandline");
+
 
 export class Allure {
     //Generating an String containing the test-results in an XML-Format which is readable for Allure, and calling a method writing the string to a file. 
-    static generateAllureXMLOutput(testsuite: TestSuite) {
+    static generateAllureXMLOutput(testsuite: Testsuite) {
         var allureXMLString = "";
         allureXMLString += "<?xml version='1.0'?>\n";
         allureXMLString += "<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='" + testsuite.startTime + "' stop='" + testsuite.stopTime + "'>\n";
@@ -36,13 +39,13 @@ export class Allure {
     //Write the given String to file, as an input for the report generation
     static writeXMLToFile(xmlString: any, name: any) {
 
-        const save = require('save-file');
+        //const save = require('save-file');
         save(xmlString, 'allure-results/' + name + '-testsuite.xml');
     }
 
     //Generate the Allure-report.
     static generateReport() {
-        var allure = require('allure-commandline');
+        //var allure = require('allure-commandline');
 
         // returns ChildProcess instance
         var generation = allure(['generate', 'node_modules/jest-allure-reporter/allure-results', '--clean']);

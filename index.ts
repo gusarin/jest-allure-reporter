@@ -1,6 +1,6 @@
 import { JestResults } from "./jest_results";
 import { Allure } from "./allure";
-import { TestSuite } from "./testsuite";
+import { Testsuite } from "./testsuite";
 
 /**
  * jest-allure-reporter
@@ -17,7 +17,7 @@ class JestAllureReporter {
 
         const testResultsAsJson = JestResults.onRunComplete(contexts, results);
         results.testResults.forEach((suite: any) => {
-            const testsuite = new TestSuite(suite, testResultsAsJson);
+            const testsuite = new Testsuite(suite, testResultsAsJson);
             testsuite.writeToFileAsAllureInput();
         });
         Allure.generateReport();

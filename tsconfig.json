@@ -16,6 +16,9 @@
     "suppressImplicitAnyIndexErrors": true,
     "moduleResolution": "node",
     "sourceMap": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noImplicitAny": false,
     "lib": [
       "es6",
       "es2015.promise",
