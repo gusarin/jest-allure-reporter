@@ -1,33 +1,29 @@
 /**
  * jest-allure-reporter
  * @author: Pascal Esemann
- * @file: testsuite.js
+ * @file: testsuite.ts
  * @description: Class for representing a testcase.
  */
-
 
 import { Testcase } from "./testcase";
 import { Allure } from "./allure";
 
-    //Getting testsuite-related data from the json-results of the testsuite.
+
+//Getting testsuite-related data from the json-results of the testsuite.
 export class Testsuite {
     public testSuiteResults: any;
-    public startTime: any;
-    public stopTime: any;
-    public name: any;
-    public testcases: any;
+    public startTime: String;
+    public stopTime: String;
+    public name: String;
+    public testcases: Testcase[];
 
     constructor(testSuiteResults: any, jsonResults: any) {
-        //required Classes
-        //const testCase = require('./testcase.js');
-
-
         this.testSuiteResults = testSuiteResults;
         this.startTime = testSuiteResults.perfStats.start;
         this.stopTime = testSuiteResults.perfStats.end;
-        this.name = testSuiteResults.testFilePath.replace(/\//g, '');
+        this.name = testSuiteResults.testFilePath.replace(/\//g, '.');
         this.testcases = [];
-        this.testSuiteResults.testResults.forEach((testcase: any) => {
+        this.testSuiteResults.testResults.forEach((testcase: JSON) => {
             this.testcases.push(new Testcase(testcase, jsonResults));
         });
 
@@ -35,7 +31,6 @@ export class Testsuite {
 
     //Triggering creation of an XML-resultfile from the testsuites data.
     writeToFileAsAllureInput() {
-        //const allure = require('./allure.js');
         Allure.generateAllureXMLOutput(this);
     }
 } 

@@ -24,13 +24,7 @@
   "author": {
     "name": "Pascal Esemann <pascal.esemann@gusarin.de> (https://github.com/gusarin)"
   },
-  "man": {
-    "name": "jest-allure-reporter",
-    "version": "1.1.0",
-    "description": "A Jest Allure Reoprter, which takes the test-results from jest and creates an allure-report from it.",
-    "main": "index.js",
-    "man": "./README.md"
-  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/gusarin/jest-allure-reporter"
@@ -40,8 +34,10 @@
     "@types/jest": "^22.1.3",
     "@types/node": "^9.4.6",
     "allure-commandline": "^2.5.0",
+    "fs-extra": "^5.0.0",
     "hjson": "^3.1.1",
     "jest": "^22.4.0",
+    "rootpath": "^0.1.2",
     "save-file": "^1.2.0"
   }
 }
