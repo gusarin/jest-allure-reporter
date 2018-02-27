@@ -1,20 +1,25 @@
-var escape = module.exports = function escape(string, ignore) {
-  let pattern;
+export function escapeXml(str: string, ignore: any) {
+    const map = {
+        '>': '&gt;'
+        , '<': '&lt;'
+        , "'": '&apos;'
+        , '"': '&quot;'
+        , '&': '&amp;'
+    };
 
-  if (string === null || string === undefined) return;
+    let pattern;
 
-  ignore = (ignore || '').replace(/[^&"<>\']/g, '');
-  pattern = '([&"<>\'])'.replace(new RegExp('[' + ignore + ']', 'g'), '');
+    if (str === null || str === undefined) return;
 
-  return string.replace(new RegExp(pattern, 'g'), function(str, item) {
-            return escape.map[item];
-          })
-}
+    ignore = (ignore || '').replace(/[^&"<>\']/g, '');
+    pattern = '([&"<>\'])'.replace(new RegExp('[' + ignore + ']', 'g'), '');
 
-const map = escape.map = {
-    '>': '&gt;'
-  , '<': '&lt;'
-  , "'": '&apos;'
-  , '"': '&quot;'
-  , '&': '&amp;'
+    str = str.replace(/\u001b/g, "");
+    str = str.replace(/\u005b/g, "");
+    str = str.replace(/\u0032/g, "");
+    str = str.replace(/\u006d/g, "");
+
+    return str.replace(new RegExp(pattern, 'g'), function (str, item) {
+        return map[item];
+    })
 }

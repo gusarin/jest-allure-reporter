@@ -9,11 +9,14 @@ import { Testsuite } from "./testsuite";
 import { Testcase } from "./testcase";
 import save = require("save-file");
 import allure = require("allure-commandline");
+// FIXME imports
 import fs = require('fs-extra');
 import rp = require('rootpath');
+import { escapeXml } from "./xmlescape";
 
 
 export class Allure {
+    // TODO solve via template
     //Generating an String containing the test-results in an XML-Format which is readable for Allure, and calling a method writing the string to a file. 
     static generateAllureXMLOutput(testsuite: Testsuite) {
         var allureXMLString = "";
@@ -27,8 +30,13 @@ export class Allure {
             allureXMLString += "<name>" + testcase.fullName + "</name>\n";
             allureXMLString += "<title>" + testcase.title + "</title>\n";
             allureXMLString += "<failure>\n";
-            allureXMLString += "<message>" + testcase.failureMessages + "</message>\n";
-            allureXMLString += "<stack-trace>" + testcase.failureMessages + "</stack-trace>\n";
+            const messages = testcase.failureMessages ? testcase.failureMessages.split("\n").map((line) => {
+                const esc = escapeXml(line, '');
+                return esc;
+            }) : [];
+
+            allureXMLString += "<message>" + messages.join("\n") + "</message>\n";
+            allureXMLString += "<stack-trace>" + messages.join("\n") + "</stack-trace>\n";
             allureXMLString += "</failure>\n";
             allureXMLString += "</test-case>\n";
         });
@@ -40,7 +48,7 @@ export class Allure {
     }
 
     //removeOldResults from Filesystem
-    static removeOldResults(){
+    static removeOldResults() {
         //remove old results
         fs.remove('/tmp/allure-results/*', (err) => {
             if (err) console.log("Deleting old result-files failed. There might be no old results or something unexpected happened.");
@@ -61,7 +69,7 @@ export class Allure {
         fs.copy('allure-report/history/', '/tmp/allure-results/history/', err => {
             if (err) return console.log("Copying old history failed. There might be no history or something unexpected happened.")
             else console.log('Successfully copied history!')
-          })       
+        })
 
         // returns ChildProcess instance
         var generation = allure(['generate', '/tmp/allure-results', '--clean']);

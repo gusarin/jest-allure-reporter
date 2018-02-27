@@ -7,12 +7,12 @@
 
 //Getting testcase-related data from the json-results of the testcase.
 export class Testcase {
-    public startTime: String;
-    public stopTime: String;
-    public status: String;
-    public fullName: String;
-    public title: String;
-    public failureMessages: String;
+    public startTime: string;
+    public stopTime: string;
+    public status: string;
+    public fullName: string;
+    public title: string;
+    public failureMessages: string;
     
     constructor(testcase: any, jsonResults: any) {
         this.startTime = jsonResults.startTime;
