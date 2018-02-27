@@ -1,0 +1,5 @@
+node_modules/
+allure-results/
+.gitignore
+*.map.js
+
