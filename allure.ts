@@ -13,6 +13,7 @@ import allure = require("allure-commandline");
 import fs = require('fs-extra');
 import rp = require('rootpath');
 import { escapeXml } from "./xmlescape";
+import strip_ansi = require("strip-ansi");
 
 
 export class Allure {
@@ -31,7 +32,8 @@ export class Allure {
             allureXMLString += "<title>" + testcase.title + "</title>\n";
             allureXMLString += "<failure>\n";
             const messages = testcase.failureMessages ? testcase.failureMessages.split("\n").map((line) => {
-                const esc = escapeXml(line, '');
+                var esc: string = strip_ansi(line);
+                esc = escapeXml(esc, '');
                 return esc;
             }) : [];
 
