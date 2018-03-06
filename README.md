@@ -17,7 +17,7 @@ Installation is relatively simple.
 In your jest-project add the following to the dependencies section of the package.json:
 ```json
 "dependencies": {
-    "jest-allure-reporter": "^1.1.6"
+    "jest-allure-reporter": "^1.2.0"
 }
 ```
 Additionally configure the jest-allure-reporter as the test-reporter used by jest by adding the following to your jest.config.ts:

@@ -9,7 +9,6 @@ import { Testsuite } from "./testsuite";
 import { Testcase } from "./testcase";
 import save = require("save-file");
 import allure = require("allure-commandline");
-// FIXME imports
 import fse = require('fs-extra');
 import rp = require('rootpath');
 import { escapeXml } from "./xmlescape";
@@ -19,12 +18,11 @@ import * as st from "string-template";
 
 
 export class Allure {
-    // TODO solve via template
     //Generating an String containing the test-results in an XML-Format which is readable for Allure, and calling a method writing the string to a file. 
     static generateAllureXMLOutput(testsuite: Testsuite) {
 
-        var xmlSuiteTemplate: string = fs.readFileSync("../../../jest-allure-reporter/xmlSuiteTemplate","utf8").toString();
-        var xmlTestcaseTemplate: string = fs.readFileSync("../../../jest-allure-reporter/xmlTestcaseTemplate","utf8").toString();
+        var xmlSuiteTemplate: string = fs.readFileSync("node_modules/jest-allure-reporter/xmlSuiteTemplate","utf8").toString();
+        var xmlTestcaseTemplate: string = fs.readFileSync("node_modules/jest-allure-reporter/xmlTestcaseTemplate","utf8").toString();
         var testcases: string ="";
         
         testsuite.testcases.forEach((testcase: Testcase) => {
