@@ -1,0 +1,8 @@
+<test-case start='{testStartTime}' status='{testStatus}' stop='{testStopTime}'>
+    <name> {testName} </name>
+    <title> {testTitle} </title>
+    <failure>
+        <message> {testMessage} </message>
+        <stack-trace> {testMessage} </stack-trace>
+    </failure>
+</test-case>
