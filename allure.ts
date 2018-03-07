@@ -12,7 +12,6 @@ import allure = require("allure-commandline");
 import fse = require('fs-extra');
 import rp = require('rootpath');
 import { escapeXml } from "./xmlescape";
-import strip_ansi = require("strip-ansi");
 import * as fs from "fs";
 import * as st from "string-template";
 
@@ -32,7 +31,7 @@ export class Allure {
                 ,testStopTime: testcase.stopTime
                 ,testName: testcase.fullName
                 ,testTitle: testcase.title
-                ,testMessage: escapeXml(strip_ansi(testcase.failureMessages), '')
+                ,testMessage: escapeXml(testcase.failureMessages, '')
             });
         });
 
