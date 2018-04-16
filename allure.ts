@@ -17,7 +17,7 @@ import * as st from "string-template";
 import * as path from "path";
 import * as os from "os";
 
-const tempDir = path.resolve(path.join(os.tmpdir(), `./allure-results33`));
+const tempDir = path.resolve(path.join(os.tmpdir(), `./allure-results`));
 
 export class Allure {
     //Generating an String containing the test-results in an XML-Format which is readable for Allure, and calling a method writing the string to a file. 
