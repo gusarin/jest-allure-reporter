@@ -8,13 +8,12 @@
 import { Testcase } from "./testcase";
 import { Allure } from "./allure";
 
-
 //Getting testsuite-related data from the json-results of the testsuite.
 export class Testsuite {
     public testSuiteResults: any;
-    public startTime: String;
-    public stopTime: String;
-    public name: String;
+    public startTime: string;
+    public stopTime: string;
+    public name: string;
     public testcases: Testcase[];
 
     constructor(testSuiteResults: any, jsonResults: any) {
@@ -30,7 +29,7 @@ export class Testsuite {
     }
 
     //Triggering creation of an XML-resultfile from the testsuites data.
-    writeToFileAsAllureInput() {
+    public writeToFileAsAllureInput() {
         Allure.generateAllureXMLOutput(this);
     }
-} 
+}

@@ -9,14 +9,12 @@ import { JestResults } from "./jest_results";
 import { Allure } from "./allure";
 import { Testsuite } from "./testsuite";
 
-
 class JestAllureReporter {
 
     //Method is getting called after the tests ran.
-    onRunComplete(contexts: any, results: any) {
+    public onRunComplete(contexts: any, results: any) {
         //remove old Results
         Allure.removeOldResults();
-
 
         const testResultsAsJson = JestResults.onRunComplete(contexts, results);
         results.testResults.forEach((suite: JSON) => {

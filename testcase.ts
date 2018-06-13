@@ -13,7 +13,7 @@ export class Testcase {
     public fullName: string;
     public title: string;
     public failureMessages: string;
-    
+
     constructor(testcase: any, jsonResults: any) {
         this.startTime = jsonResults.startTime;
         this.stopTime = (parseInt(jsonResults.startTime) + parseInt(testcase.duration)).toString();
@@ -26,4 +26,3 @@ export class Testcase {
         });
     }
 }
-
