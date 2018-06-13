@@ -23,8 +23,8 @@ export class Allure {
     //Generating an string containing the test-results in an XML-Format which is readable for Allure, and calling a method writing the string to a file.
     public static generateAllureXMLOutput(testsuite: Testsuite) {
 
-        const xmlSuiteTempPath = path.resolve(path.join(__dirname, "./xmlSuiteTemplate"));
-        const xmlTestCasePath = path.resolve(path.join(__dirname, "./xmlTestcaseTemplate"));
+        const xmlSuiteTempPath = path.resolve(path.join(__dirname, "./templates/xmlSuiteTemplate.xml"));
+        const xmlTestCasePath = path.resolve(path.join(__dirname, "./templates/xmlTestcaseTemplate.xml"));
         const xmlSuiteTemplate: string = fs.readFileSync(xmlSuiteTempPath, "utf8").toString();
         const xmlTestcaseTemplate: string = fs.readFileSync(xmlTestCasePath, "utf8").toString();
         let testcases: string = "";

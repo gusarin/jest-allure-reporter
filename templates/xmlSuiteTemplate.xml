@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='{suiteStartTime}' stop='{suiteStopTime}'>
-    <name> {suiteName} </name>
-    <title> {suiteName} </title>
+    <name>{suiteName}</name>
+    <title>{suiteName}</title>
     <test-cases>
         {testCases}
     </test-cases>
