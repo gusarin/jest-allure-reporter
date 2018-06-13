@@ -18,7 +18,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest-allure-reporter",
-    "tsc:compile": "tsc",
+    "compile": "tsc",
+    "lint": "tslint",
     "prepublish": "npm run tsc:compile"
   },
   "author": {
@@ -43,5 +44,9 @@
     "save-file": "^1.2.0",
     "string-template": "^1.0.0",
     "strip-ansi": "^4.0.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1"
   }
 }
