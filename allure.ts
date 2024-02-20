@@ -7,7 +7,6 @@
 
 import { Testsuite } from "./testsuite";
 import { Testcase } from "./testcase";
-import save = require("save-file");
 import allure = require("allure-commandline");
 import fse = require("fs-extra");
 import rp = require("rootpath");
@@ -64,7 +63,7 @@ export class Allure {
     //Write the given string to file, as an input for the report generation
     public static writeXMLToFile(xmlstring: string, name: string) {
         const target = path.resolve(path.join(tempDir, `./${name}-testsuite.xml`));
-        save(xmlstring, target);
+        fs.writeFileSync(target, xmlstring, 'utf8');
     }
 
     //Generate the Allure-report.
